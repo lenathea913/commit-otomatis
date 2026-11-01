@@ -1,0 +1,1 @@
+Catatan aktivitas manual. File ini di-append oleh main.py.

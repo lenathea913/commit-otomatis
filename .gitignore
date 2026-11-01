@@ -1,0 +1,12 @@
+# Log lokal — hanya untuk riwayat di mesin ini, tidak ikut ke GitHub
+log.txt
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Editor & sistem
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
