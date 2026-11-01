@@ -1,6 +1,6 @@
 # Commit Otomatis (aktivitas.txt)
 
-Alat kecil Windows: jalankan `start.bat`, masukkan jumlah commit (1–3), dan
+Alat kecil Windows: jalankan `start.bat`, masukkan jumlah commit (1–10), dan
 program menambah satu baris acak ke `aktivitas.txt` untuk tiap commit, lalu
 melakukan **satu kali push** ke GitHub. Setiap putaran juga dicatat ke
 `log.txt` (lokal, tidak ikut di-commit).
@@ -42,14 +42,16 @@ Autentikasi (pilih satu, **jangan pernah** simpan token di kode/repo):
 
 ```
 start.bat
-Jumlah commit (1-3): 3
+Jumlah commit (1-10): 5
 Mode dry-run (tanpa mengubah apa pun)? [y/n]: n
 Jeda antar-commit dalam detik (0 = tanpa jeda): 0
 
-Mode: LIVE · 3 commit · jeda 0 detik
-  commit 1/3 -> Catat aktivitas 1/3: menyelesaikan satu tugas kecil
-  commit 2/3 -> Catat aktivitas 2/3: membaca dokumentasi teknis
-  commit 3/3 -> Catat aktivitas 3/3: menulis ringkasan harian
+Mode: LIVE · 5 commit · jeda 0 detik
+  commit 1/5 -> Catat aktivitas 1/5: menyelesaikan satu tugas kecil
+  commit 2/5 -> Catat aktivitas 2/5: membaca dokumentasi teknis
+  commit 3/5 -> Catat aktivitas 3/5: menulis ringkasan harian
+  commit 4/5 -> Catat aktivitas 4/5: merapikan catatan kerja
+  commit 5/5 -> Catat aktivitas 5/5: menguji perubahan terakhir
 
 Mendorong main ke origin ...
 Push berhasil — commit sudah ada di GitHub.
@@ -58,12 +60,12 @@ Push berhasil — commit sudah ada di GitHub.
 Masukan yang ditolak (program meminta ulang, tidak ada perubahan apa pun):
 
 ```
-Jumlah commit (1-3):          -> Input kosong. Masukkan salah satu dari: 1, 2, 3
-Jumlah commit (1-3): abc      -> 'abc' bukan bilangan bulat yang valid
-Jumlah commit (1-3): 2.5      -> '2.5' bukan bilangan bulat yang valid
-Jumlah commit (1-3): 0        -> 0 di luar rentang. Masukkan angka 1 sampai 3.
-Jumlah commit (1-3): 7        -> 7 di luar rentang. Masukkan angka 1 sampai 3.
-Jeda antar-commit ...: -1     -> Jeda tidak boleh negatif.
+Jumlah commit (1-10):          -> Input kosong. Masukkan bilangan bulat 1 sampai 10.
+Jumlah commit (1-10): abc      -> 'abc' bukan bilangan bulat yang valid
+Jumlah commit (1-10): 2.5      -> '2.5' bukan bilangan bulat yang valid
+Jumlah commit (1-10): 0        -> 0 di luar rentang. Masukkan angka 1 sampai 10.
+Jumlah commit (1-10): 11       -> 11 di luar rentang. Masukkan angka 1 sampai 10.
+Jeda antar-commit ...: -1      -> Jeda tidak boleh negatif.
 ```
 
 ### Mode dry-run
@@ -73,7 +75,7 @@ berkas yang diubah, tidak ada commit, tidak ada push:
 
 ```bat
 start.bat --dry-run --interval 0
-Jumlah commit (1-3): 2
+Jumlah commit (1-10): 2
 
 Mode: DRY-RUN · 2 commit · jeda 0 detik
   [dry-run] commit 1/2 -> Catat aktivitas 1/2: ...

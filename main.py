@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-main.py — tambah 1 sampai 3 commit ke aktivitas.txt, lalu push sekali.
+main.py — tambah 1 sampai 10 commit ke aktivitas.txt, lalu push sekali.
 
 Opsi:
   --dry-run            hanya menampilkan rencana; tidak mengubah, commit, atau push
@@ -25,7 +25,7 @@ from pathlib import Path
 REPO_DIR = Path(__file__).resolve().parent
 TARGET_NAME = "aktivitas.txt"
 LOG_NAME = "log.txt"
-MIN_COMMITS, MAX_COMMITS = 1, 3
+MIN_COMMITS, MAX_COMMITS = 1, 10
 
 TEKS = [
     "merapikan catatan kerja",
@@ -139,8 +139,7 @@ def periksa_lingkungan():
 
 
 def minta_jumlah():
-    """Ambil dan validasi jumlah commit: bilangan bulat 1..3."""
-    contoh = ", ".join(str(n) for n in range(MIN_COMMITS, MAX_COMMITS + 1))
+    """Ambil dan validasi jumlah commit: bilangan bulat 1..10."""
     while True:
         try:
             teks = input(f"Jumlah commit ({MIN_COMMITS}-{MAX_COMMITS}): ").strip()
@@ -148,7 +147,7 @@ def minta_jumlah():
             keluar("\nDibatalkan oleh pengguna.", 130)
 
         if teks == "":
-            print(f"  Input kosong. Masukkan salah satu dari: {contoh}")
+            print(f"  Input kosong. Masukkan bilangan bulat {MIN_COMMITS} sampai {MAX_COMMITS}.")
             continue
         if not re.fullmatch(r"[0-9]+", teks):
             print(f"  '{teks}' bukan bilangan bulat yang valid (contoh salah: 0, abc, 2.5).")
