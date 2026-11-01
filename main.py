@@ -69,7 +69,7 @@ def jalankan_git(*args):
 
 def baca_argumen():
     p = argparse.ArgumentParser(
-        description="Tambah 1-3 commit ke aktivitas.txt lalu push sekali ke origin."
+        description="Tambah 1-10 commit ke aktivitas.txt lalu push sekali ke origin."
     )
     p.add_argument(
         "--dry-run",
